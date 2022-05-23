@@ -57,7 +57,7 @@ Build a Node.js command-line application that takes in information about employe
         - Employee ID
         - Email address
         - School
-        - Taken back to the menu for Egineer, Intern, or Finish
+        - Taken back to the menu for Engineer, Intern, or Finish
     - When Finish is selected
         - HTML is generated with all the info provided from Prompts
 - CSS Styling is up to you

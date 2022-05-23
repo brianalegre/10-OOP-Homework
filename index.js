@@ -95,12 +95,25 @@ const internQuestions = [
     },
 ]
 
+// Finish Question
+const choiceQuestion = [
+    {
+        type: 'list',
+        message: 'What would you like to do next?',
+        name: 'choice',
+        choices: ['Add a new Engineer', 'Add a new Intern', 'Exit'],
+        default: ['Add a new Engineer']
+    },
+]
+
+
 // Create Manager
 function createManager() {
     inquirer
         .prompt(managerQuestions)
         .then((data) => {
             // Create a manager with the Class Manager
+            console.log(data)
             const manager = new Manager(
                 data.name,
                 data.id,
@@ -109,40 +122,58 @@ function createManager() {
             )
             // Push Manager info to allEmployees
             allEmployees.push(manager)
+            console.log(allEmployees)
         })
 }
 
-// Create Engineer
-function createEngineer() {
-    inquirer
-        .prompt(engineerQuestions)
-        .then((data) => {
-            const engineer = new Engineer(
-                data.name,
-                data.id,
-                data.email,
-                data.github
-            )
-            allEmployees.push(engineer)
-        })
+// // Create Engineer
+// function createEngineer() {
+//     inquirer
+//         .prompt(engineerQuestions)
+//         .then((data) => {
+//             const engineer = new Engineer(
+//                 data.name,
+//                 data.id,
+//                 data.email,
+//                 data.github
+//             )
+//             allEmployees.push(engineer)
+//         })
+// }
+
+// // Create Intern
+// function createIntern() {
+//     inquirer
+//         .prompt(internQuestions)
+//         .then((data) => {
+//             const intern = new intern(
+//                 data.name,
+//                 data.id,
+//                 data.email,
+//                 data.school
+//             )
+//             allEmployees.push(intern)
+//         })
+// }
+
+// function choice() {
+//     inquirer
+//         .prompt(choiceQuestion)
+//         .then((data) => {
+//             console.log(data)
+//         })
+// }
+
+// Start Application
+function init() {
+    createManager();
+    // createEngineer();
+    // createIntern();
+    // choice();
+    // console.log(allEmployees)
 }
 
-// Create Intern
-function createIntern() {
-    inquirer
-        .prompt(internQuestions)
-        .then((data) => {
-            const intern = new intern(
-                data.name,
-                data.id,
-                data.email,
-                data.school
-            )
-            allEmployees.push(intern)
-        })
-}
-
-
+init();
 
 // Application Flow
 // Create Manager
