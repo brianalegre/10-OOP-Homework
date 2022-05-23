@@ -36,6 +36,7 @@ Build a Node.js command-line application that takes in information about employe
 - Inquirer (Prompts)
     - https://www.npmjs.com/package/inquirer
 - HTML generated from CLI inputs
+    - Card for each Employee
     - Email link works correctly
     - Github Username links works
 - Start of Application
@@ -65,6 +66,7 @@ Build a Node.js command-line application that takes in information about employe
         - Parent Class
         - name
         - id
+        - email
         - getName()
         - getEmail()
         - getRole()
