@@ -32,7 +32,7 @@ const managerQuestions = [
     },
     {
         type: 'input',
-        name: 'office',
+        name: 'officeNumber',
         message: `Enter the Manager's Office Number`,
         default: '1007'
     },
@@ -118,7 +118,7 @@ function createManager() {
                 data.name,
                 data.id,
                 data.email,
-                data.office
+                data.officeNumber
             )
             // Push Manager info to allEmployees
             allEmployees.push(manager)
