@@ -180,7 +180,6 @@ function choice() {
 }
 
 
-
 // Create Employee Card
 function employeeCard(allEmployees) {
     return /*html*/`
@@ -207,7 +206,6 @@ function createHTML() {
 		<title>Document</title>
 	</head>
 	<body>
-		${allEmployees.map(employeeCard())}
 	</body>
 </html>
     `
