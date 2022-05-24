@@ -179,14 +179,47 @@ function choice() {
         })
 }
 
+
+
+// Create Employee Card
+function employeeCard(allEmployees) {
+    return /*html*/`
+        <div class='card'>
+            <h2>${allEmployees.name}</h2>
+            <h3>${allEmployees.role}</h3>
+            <p>${allEmployees.id}</p>
+            <p>${allEmployees.email}</p>
+            <p>${allEmployees.officeNumber || allEmployees.github || allEmployees.school}</p>
+        </div>
+    `
+}
+
+function createHTML() {
+    return /*html*/ `
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<!-- <script defer src="./assets/js/script.js"></script> -->
+		<title>Document</title>
+	</head>
+	<body>
+		${allEmployees.map(employeeCard())}
+	</body>
+</html>
+    `
+}
+
 // Start Application
 function init() {
     createManager();
-
 }
 
+fs.writeFileSync("./dist/index.html", createHTML())
 init();
-
 // Application Flow
 // Create Manager
 // Prompt to add Engineer, Itern, or Finish
