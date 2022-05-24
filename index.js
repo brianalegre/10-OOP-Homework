@@ -113,7 +113,7 @@ function createManager() {
         .prompt(managerQuestions)
         .then((data) => {
             // Create a manager with the Class Manager
-            console.log(data)
+            // console.log(data)
             const manager = new Manager(
                 data.name,
                 data.id,
@@ -122,7 +122,7 @@ function createManager() {
             )
             // Push Manager info to allEmployees
             allEmployees.push(manager)
-            console.log(allEmployees)
+            // console.log(allEmployees)
             choice()
         })
 }
@@ -139,6 +139,7 @@ function createEngineer() {
                 data.github
             )
             allEmployees.push(engineer)
+            choice()
         })
 }
 
@@ -147,13 +148,14 @@ function createIntern() {
     inquirer
         .prompt(internQuestions)
         .then((data) => {
-            const intern = new intern(
+            const intern = new Intern(
                 data.name,
                 data.id,
                 data.email,
                 data.school
             )
             allEmployees.push(intern)
+            choice()
         })
 }
 
@@ -168,8 +170,10 @@ function choice() {
                     break;
                 case 'Add a new Intern':
                     createIntern()
+                    break;
                 default:
-                    console.log(`Switch Break`)
+                    console.log(`Exiting Question Section...`)
+                    console.log(`List of all employees created: `, allEmployees)
                     break;
             }
         })
