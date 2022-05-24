@@ -10,7 +10,7 @@ const Intern = require('./lib/intern')
 const allEmployees = [];
 
 
-// First Questions to ASK
+// First Questions to Ask
 const managerQuestions = [
     {
         type: 'input',
@@ -45,19 +45,19 @@ const engineerQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Engineer's Name`,
-        default: 'brian',
+        default: 'Kevin',
     },
     {
         type: 'input',
         name: 'id',
         message: `Enter the Engineer's ID Number`,
-        default: '007',
+        default: '008',
     },
     {
         type: 'input',
         name: 'email',
         message: `Enter the Engineer's Email Address`,
-        default: '007@secretemail.com',
+        default: 'Kevin@secretemail.com',
     },
     {
         type: 'input',
@@ -73,19 +73,19 @@ const internQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Intern's Name`,
-        default: 'brian',
+        default: 'allec',
     },
     {
         type: 'input',
         name: 'id',
         message: `Enter the Intern's ID Number`,
-        default: '007',
+        default: '009',
     },
     {
         type: 'input',
         name: 'email',
         message: `Enter the Intern's Email Address`,
-        default: '007@secretemail.com',
+        default: 'allec@secretemail.com',
     },
     {
         type: 'input',
@@ -123,54 +123,62 @@ function createManager() {
             // Push Manager info to allEmployees
             allEmployees.push(manager)
             console.log(allEmployees)
+            choice()
         })
 }
 
-// // Create Engineer
-// function createEngineer() {
-//     inquirer
-//         .prompt(engineerQuestions)
-//         .then((data) => {
-//             const engineer = new Engineer(
-//                 data.name,
-//                 data.id,
-//                 data.email,
-//                 data.github
-//             )
-//             allEmployees.push(engineer)
-//         })
-// }
+// Create Engineer
+function createEngineer() {
+    inquirer
+        .prompt(engineerQuestions)
+        .then((data) => {
+            const engineer = new Engineer(
+                data.name,
+                data.id,
+                data.email,
+                data.github
+            )
+            allEmployees.push(engineer)
+        })
+}
 
-// // Create Intern
-// function createIntern() {
-//     inquirer
-//         .prompt(internQuestions)
-//         .then((data) => {
-//             const intern = new intern(
-//                 data.name,
-//                 data.id,
-//                 data.email,
-//                 data.school
-//             )
-//             allEmployees.push(intern)
-//         })
-// }
+// Create Intern
+function createIntern() {
+    inquirer
+        .prompt(internQuestions)
+        .then((data) => {
+            const intern = new intern(
+                data.name,
+                data.id,
+                data.email,
+                data.school
+            )
+            allEmployees.push(intern)
+        })
+}
 
-// function choice() {
-//     inquirer
-//         .prompt(choiceQuestion)
-//         .then((data) => {
-//             console.log(data)
-//         })
-// }
+function choice() {
+    inquirer
+        .prompt(choiceQuestion)
+        .then((data) => {
+            console.log(data)
+            switch (data.choice) {
+                case 'Add a new Engineer':
+                    createEngineer()
+                    break;
+                case 'Add a new Intern':
+                    createIntern()
+                default:
+                    console.log(`Switch Break`)
+                    break;
+            }
+        })
+}
 
 // Start Application
 function init() {
     createManager();
-    // createEngineer();
-    // createIntern();
-    // choice();
-    // console.log(allEmployees)
+
 }
 
 init();
