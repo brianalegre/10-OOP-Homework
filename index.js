@@ -5,6 +5,8 @@ const Employee = require('./lib/Employee')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/intern')
+const cardGen = require('./src/cardTemplate.js');
+
 
 // Store Employees
 const allEmployees = [];
@@ -174,6 +176,7 @@ function choice() {
                 default:
                     console.log(`Exiting Question Section...`)
                     console.log(`List of all employees created: `, allEmployees)
+                    // console.log(allEmployees)
                     break;
             }
         })
@@ -206,6 +209,9 @@ function createHTML() {
 		<title>Document</title>
 	</head>
 	<body>
+        <div class="container">
+            ${Manager.createCard()};
+        </div>
 	</body>
 </html>
     `
