@@ -5,8 +5,10 @@ const Employee = require('./lib/Employee')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/intern')
-const cardGen = require('./src/cardTemplate.js');
-
+const path = require('path');
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const distPath = path.join(DIST_DIR, 'index.html');
+const cardGen = require('./src/cardTemplates.js');
 
 // Store Employees
 const allEmployees = [];
@@ -177,24 +179,25 @@ function choice() {
                     console.log(`Exiting Question Section...`)
                     console.log(`List of all employees created: `, allEmployees)
                     // console.log(allEmployees)
+                    cards();
                     break;
             }
         })
 }
 
 
-// Create Employee Card
-function employeeCard(allEmployees) {
-    return /*html*/`
-        <div class='card'>
-            <h2>${allEmployees.name}</h2>
-            <h3>${allEmployees.role}</h3>
-            <p>${allEmployees.id}</p>
-            <p>${allEmployees.email}</p>
-            <p>${allEmployees.officeNumber || allEmployees.github || allEmployees.school}</p>
-        </div>
-    `
-}
+// // Create Employee Card
+// function employeeCard(allEmployees) {
+//     return /*html*/`
+//         <div class='card'>
+//             <h2>${allEmployees.name}</h2>
+//             <h3>${allEmployees.role}</h3>
+//             <p>${allEmployees.id}</p>
+//             <p>${allEmployees.email}</p>
+//             <p>${allEmployees.officeNumber || allEmployees.github || allEmployees.school}</p>
+//         </div>
+//     `
+// }
 
 // function createHTML() {
 //     return /*html*/ `
@@ -222,7 +225,15 @@ function init() {
     createManager();
 }
 
-fs.writeFileSync("./dist/index.html", createHTML())
+function cards() {
+    // Create the output directory if the dist path doesn't exist
+    if (!fs.existsSync(DIST_DIR)) {
+        fs.mkdirSync(DIST_DIR);
+    }
+    fs.writeFileSync(distPath, cardGen(allEmployees));
+}
+
+// Start Application
 init();
 // Application Flow
 // Create Manager
