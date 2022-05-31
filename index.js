@@ -12,6 +12,7 @@ const cardGen = require('./src/cardTemplates.js');
 
 // Store Employees
 const allEmployees = [];
+const allIDs = [];
 
 
 // First Questions to Ask
@@ -20,25 +21,52 @@ const managerQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Manager's Name`,
-        default: 'brian',
+        // default: 'brian',
+        validate: (answer) => {
+            if (answer !== '') {
+                return true;
+            }
+            return 'Please enter at least one character.';
+        },
     },
     {
         type: 'input',
         name: 'id',
         message: `Enter Manager's ID Number`,
-        default: '007',
+        // default: '007',
+        validate: (answer) => {
+            const pass = answer.match(/^[1-9]\d*$/);
+            if (pass) {
+                return true;
+            }
+            return 'Please enter a positive number greater than zero.';
+        },
     },
     {
         type: 'input',
         name: 'email',
         message: `Enter the Manager's Email Address`,
-        default: '007@secretemail.com',
+        // default: '007@secretemail.com',
+        validate: (answer) => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if (pass) {
+                return true;
+            }
+            return 'Please enter a valid email address.';
+        },
     },
     {
         type: 'input',
         name: 'officeNumber',
         message: `Enter the Manager's Office Number`,
-        default: '1007'
+        // default: '1007'
+        validate: (answer) => {
+            const pass = answer.match(/^[1-9]\d*$/);
+            if (pass) {
+                return true;
+            }
+            return 'Please enter a positive number greater than zero.';
+        },
     },
 ]
 
@@ -49,25 +77,55 @@ const engineerQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Engineer's Name`,
-        default: 'Kevin',
+        // default: 'Kevin',
+        validate: (answer) => {
+            if (answer !== '') {
+                return true;
+            }
+            return 'Please enter at least one character.';
+        },
     },
     {
         type: 'input',
         name: 'id',
         message: `Enter the Engineer's ID Number`,
-        default: '008',
+        // default: '008',
+        validate: (answer) => {
+            const pass = answer.match(/^[1-9]\d*$/);
+            if (pass) {
+                if (allIDs.includes(answer)) {
+                    return 'This ID is already taken. Please enter a different number.';
+                } else {
+                    return true;
+                }
+            }
+            return 'Please enter a positive number greater than zero.';
+        },
     },
     {
         type: 'input',
         name: 'email',
         message: `Enter the Engineer's Email Address`,
-        default: 'Kevin@secretemail.com',
+        // default: 'Kevin@secretemail.com',
+        validate: (answer) => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if (pass) {
+                return true;
+            }
+            return 'Please enter a valid email address.';
+        },
     },
     {
         type: 'input',
         name: 'github',
         message: `Enter Engineer's Github Username`,
-        default: 'brianalegre'
+        // default: 'brianalegre'
+        validate: (answer) => {
+            if (answer !== '') {
+                return true;
+            }
+            return 'Please enter at least one character.';
+        },
     },
 ]
 
@@ -77,25 +135,57 @@ const internQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Intern's Name`,
-        default: 'allec',
+        // default: 'allec',
+        validate: (answer) => {
+            if (answer !== '') {
+                return true;
+            }
+            return 'Please enter at least one character.';
+        },
     },
     {
         type: 'input',
         name: 'id',
         message: `Enter the Intern's ID Number`,
-        default: '009',
+        // default: '009',
+        validate: (answer) => {
+            const pass = answer.match(/^[1-9]\d*$/);
+            if (pass) {
+                if (allIDs.includes(answer)) {
+                    return 'This ID is already taken. Please enter a different number.';
+                } else {
+                    return true;
+                }
+            }
+            return 'Please enter a positive number greater than zero.';
+        },
+
     },
     {
         type: 'input',
         name: 'email',
         message: `Enter the Intern's Email Address`,
-        default: 'allec@secretemail.com',
+        // default: 'allec@secretemail.com',
+        validate: (answer) => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if (pass) {
+                return true;
+            }
+            return 'Please enter a valid email address.';
+        },
+
     },
     {
         type: 'input',
         name: 'school',
         message: `Enter Intern's School Name`,
-        default: 'UCI'
+        // default: 'UCI'
+        validate: (answer) => {
+            if (answer !== '') {
+                return true;
+            }
+            return 'Please enter at least one character.';
+        },
     },
 ]
 
@@ -125,6 +215,7 @@ function createManager() {
             )
             // Push Manager info to allEmployees
             allEmployees.push(manager)
+            allIDs.push(data.id)
             choice()
         })
 }
@@ -142,6 +233,7 @@ function createEngineer() {
                 data.github
             )
             allEmployees.push(engineer)
+            allIDs.push(data.id)
             choice()
         })
 }
@@ -159,6 +251,7 @@ function createIntern() {
                 data.school
             )
             allEmployees.push(intern)
+            allIDs.push(data.id)
             choice()
         })
 }
