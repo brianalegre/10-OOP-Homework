@@ -117,7 +117,6 @@ function createManager() {
         .prompt(managerQuestions)
         .then((data) => {
             // Create a manager with the Class Manager
-            // console.log(data)
             const manager = new Manager(
                 data.name.toUpperCase(),
                 data.id,
@@ -126,7 +125,6 @@ function createManager() {
             )
             // Push Manager info to allEmployees
             allEmployees.push(manager)
-            // console.log(allEmployees)
             choice()
         })
 }
@@ -136,6 +134,7 @@ function createEngineer() {
     inquirer
         .prompt(engineerQuestions)
         .then((data) => {
+            // Create a engineer with the Class Engineer
             const engineer = new Engineer(
                 data.name.toUpperCase(),
                 data.id,
@@ -152,6 +151,7 @@ function createIntern() {
     inquirer
         .prompt(internQuestions)
         .then((data) => {
+            // Create a intern with the Class Intern
             const intern = new Intern(
                 data.name.toUpperCase(),
                 data.id,
@@ -176,50 +176,12 @@ function choice() {
                     createIntern()
                     break;
                 default:
-                    // console.log(`Exiting Question Section...`)
-                    // console.log(`List of all employees created: `, allEmployees)
-                    // console.log(allEmployees)
                     console.log(`All Employees Entered... Generating Web Page...`)
                     cards();
                     break;
             }
         })
 }
-
-
-// // Create Employee Card
-// function employeeCard(allEmployees) {
-//     return /*html*/`
-//         <div class='card'>
-//             <h2>${allEmployees.name}</h2>
-//             <h3>${allEmployees.role}</h3>
-//             <p>${allEmployees.id}</p>
-//             <p>${allEmployees.email}</p>
-//             <p>${allEmployees.officeNumber || allEmployees.github || allEmployees.school}</p>
-//         </div>
-//     `
-// }
-
-// function createHTML() {
-//     return /*html*/ `
-//     <!DOCTYPE html>
-// <html lang="en">
-// 	<head>
-// 		<meta charset="UTF-8" />
-// 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-// 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-// 		<link rel="stylesheet" href="./assets/css/style.css" />
-// 		<!-- <script defer src="./assets/js/script.js"></script> -->
-// 		<title>Document</title>
-// 	</head>
-// 	<body>
-//         <div class="container">
-//             ${Manager.createCard()};
-//         </div>
-// 	</body>
-// </html>
-//     `
-// }
 
 // Start Application
 function init() {
@@ -236,19 +198,3 @@ function cards() {
 
 // Start Application
 init();
-// Application Flow
-// Create Manager
-// Prompt to add Engineer, Itern, or Finish
-// Create HTML
-
-
-
-// CLI Prompts
-// inquirer.prompt(questions).then((data) => {
-//     // createReadme(data);
-//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
-
-//     fs.writeFileSync(filename, JSON.stringify(data, null, '\t'), (err) =>
-//         err ? console.log(err) : console.log('Success!')
-//     );
-// });
