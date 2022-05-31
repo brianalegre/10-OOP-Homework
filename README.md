@@ -5,19 +5,19 @@ Build a Node.js command-line application that takes in information about employe
 # Application Preview
 
 <p align="left">
-    <img alt="" src="">
+    <img alt="Team Profile Gen Demo 1" src="./dist/assets/images/TeamProfileGenDemoGif1.gif">
 </p>
 
 <p align="left">
-   <img alt="" src="">
+    <img alt="Team Profile Gen Demo 2" src="./dist/assets/images/TeamProfileGenDemoGif2.gif">
 </p>
 
 <p align="left">
-   <img alt="" src="">
+    <img alt="Team Profile Gen Demo 3" src="./dist/assets/images/TeamProfileGenDemoGif3.gif">
 </p>
 
 <p align="left">
-   <img alt="" src="">
+    <img alt="Team Profile Gen Demo 4" src="./dist/assets/images/TeamProfileGenDemoGif4.gif">
 </p>
 
 # Links
@@ -25,9 +25,9 @@ Build a Node.js command-line application that takes in information about employe
 -   Github Repository:
     - https://github.com/brianalegre/10-OOP-Homework
 -   Video Demo (Youtube):
-    - 
+    - https://youtu.be/1Uyonx65ANI
 -   Video Demo (Github):
-    - 
+    - https://github.com/brianalegre/10
 
 # Criteria
 
