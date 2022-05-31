@@ -7,13 +7,13 @@ const createTeam = team => {
             <div class="card employee-card">
                 <div class="card-header">
                     <h2 class="title">${manager.getName()}</h2>
-                    <h3>${manager.getRole()}</h3>
+                    <h3><i class="fa fa-user" aria-hidden="true"></i> ${manager.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list">
                         <li>ID: ${manager.getId()}</li>
                         <li>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                        <li>Office number: ${manager.getOfficeNumber()}</li>
+                        <li>Office Number: ${manager.getOfficeNumber()}</li>
                     </ul>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const createTeam = team => {
             <div class="card employee-card">
                 <div class="card-header">
                     <h2 class="title">${engineer.getName()}</h2>
-                    <h3>${engineer.getRole()}</h3>
+                    <h3><i class="fa fa-code" aria-hidden="true"></i> ${engineer.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list">
@@ -45,7 +45,7 @@ const createTeam = team => {
             <div class="card employee-card">
                 <div class="card-header">
                     <h2 class="title">${intern.getName()}</h2>
-                    <h3> ${intern.getRole()}</h3>
+                    <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i> ${intern.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list">
