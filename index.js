@@ -119,7 +119,7 @@ function createManager() {
             // Create a manager with the Class Manager
             // console.log(data)
             const manager = new Manager(
-                data.name,
+                data.name.toUpperCase(),
                 data.id,
                 data.email,
                 data.officeNumber
@@ -137,7 +137,7 @@ function createEngineer() {
         .prompt(engineerQuestions)
         .then((data) => {
             const engineer = new Engineer(
-                data.name,
+                data.name.toUpperCase(),
                 data.id,
                 data.email,
                 data.github
@@ -153,7 +153,7 @@ function createIntern() {
         .prompt(internQuestions)
         .then((data) => {
             const intern = new Intern(
-                data.name,
+                data.name.toUpperCase(),
                 data.id,
                 data.email,
                 data.school

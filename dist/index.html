@@ -1,62 +1,69 @@
- 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Company | Org Chart </title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Company | Org Chart </title>
 </head>
 
 <body>
-    <h1 class="absolute inset-x-0 top-0 h-16">My Team</h1>
-    <div class="container">
-        
-        <div class="employee-card">
-            <div class="header">
-                <h2 class="title">brian</h2>
-                <h3>Manager</h3>
+    <div class="bannerContainer">
+        <h1 class="banner">My Team</h1>
+    </div>
+    <div class="cards-container">
+        <div class="row">
+            <div class="teamInfo col-12 d-flex justify-content-center">
+                
+            <div class="card employee-card">
+                <div class="card-header">
+                    <h2 class="title">BRIAN</h2>
+                    <h3>Manager</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list">
+                        <li>ID: 007</li>
+                        <li>Email: <a href="mailto:007@secretemail.com">007@secretemail.com</a></li>
+                        <li>Office number: 1007</li>
+                    </ul>
+                </div>
             </div>
-            <div class="body">
-                <ul class="list">
-                    <li>ID: 007</li>
-                    <li>Email: <a href="mailto:007@secretemail.com">007@secretemail.com</a></li>
-                    <li>Office number: 1007</li>
-                </ul>
+        
+            <div class="card employee-card">
+                <div class="card-header">
+                    <h2 class="title">KEVIN</h2>
+                    <h3>Engineer</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list">
+                        <li> ID: 008</li>
+                        <li> Email: <a href="mailto:Kevin@secretemail.com">Kevin@secretemail.com</a></li>
+                        <li>GitHub: <a href="https://github.com/brianalegre" target="_blank" rel="noopener noreferrer">https://github.com/brianalegre</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="card employee-card">
+                <div class="card-header">
+                    <h2 class="title">ALLEC</h2>
+                    <h3> Intern</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list">
+                        <li>ID: 009</li>
+                        <li>Email: <a href="mailto:allec@secretemail.com">allec@secretemail.com</a></li>
+                        <li>School: UCI</li>
+                    </ul>
+                </div>
+            </div>
+        
             </div>
         </div>
-        
-        <div class="employee-card">
-            <div class="header">
-                <h2 class="title">Kevin</h2>
-                <h3>Engineer</h3>
-            </div>
-            <div class="body">
-                <ul class="list">
-                    <li> ID: 008</li>
-                    <li> Email: <a href="mailto:Kevin@secretemail.com">Kevin@secretemail.com</a></li>
-                    <li>GitHub: <a href="https://github.com/brianalegre" target="_blank" rel="noopener noreferrer">brianalegre</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="employee-card">
-            <div class="header">
-                <h2 class="title">allec</h2>
-                <h3> Intern</h3>
-            </div>
-            <div class="body">
-                <ul class="list">
-                    <li>ID: 009</li>
-                    <li>Email: <a href="mailto:allec@secretemail.com">allec@secretemail.com</a></li>
-                    <li>School: UCI</li>
-                </ul>
-            </div>
-        </div>
-        
     </div>
 </body>
 </html>
