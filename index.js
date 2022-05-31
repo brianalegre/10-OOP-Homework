@@ -176,9 +176,10 @@ function choice() {
                     createIntern()
                     break;
                 default:
-                    console.log(`Exiting Question Section...`)
-                    console.log(`List of all employees created: `, allEmployees)
+                    // console.log(`Exiting Question Section...`)
+                    // console.log(`List of all employees created: `, allEmployees)
                     // console.log(allEmployees)
+                    console.log(`All Employees Entered... Generating Web Page...`)
                     cards();
                     break;
             }
