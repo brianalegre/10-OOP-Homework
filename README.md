@@ -1,9 +1,20 @@
 # 10-OOP-Homework
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Table of Contents
+- [Description](#description)
+- [Application Preview](#application-preview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Links](#links)
+- [Criteria](#criteria)
+- [Questions](#questions)
+- [License](#license)
+
+## Description
 Build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
-# Application Preview
-
+## Application Preview
 <p align="left">
     <img alt="Team Profile Gen Demo 1" src="./dist/assets/images/TeamProfileGenDemoGif1.gif">
 </p>
@@ -20,8 +31,15 @@ Build a Node.js command-line application that takes in information about employe
     <img alt="Team Profile Gen Demo 4" src="./dist/assets/images/TeamProfileGenDemoGif4.gif">
 </p>
 
-# Links
+## Installation
+- Copy the repository to your system, 
+- npm install
+- node index.js
 
+## Usage
+- Quickly and easily create a Team Org Web Page
+
+## Links
 -   Github Repository:
     - https://github.com/brianalegre/10-OOP-Homework
 -   Video Demo (Youtube):
@@ -29,8 +47,7 @@ Build a Node.js command-line application that takes in information about employe
 -   Video Demo (Github):
     - https://github.com/brianalegre/10-OOP-Homework/blob/main/dist/assets/images/TeamProfileGenDemo.mp4
 
-# Criteria
-
+## Criteria
 - Jest (Tests)
     - https://www.npmjs.com/package/jest
 - Inquirer (Prompts)
@@ -89,5 +106,13 @@ Build a Node.js command-line application that takes in information about employe
         - getRole()
             - overriden, returns Intern
 
-    
+## Questions
+Questions? Concerns?  Contact Me Below:
+- Github Username: brianalegre
+- Github Link: https://github.com/brianalegre 
+- Email: brialegre@yahoo.com
+
+## License
+- Copyright 2022 Brian Alegre
+- Licensed under the: [MIT License](https://opensource.org/licenses/MIT) 
 
