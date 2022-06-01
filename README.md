@@ -42,6 +42,8 @@ Build a Node.js command-line application that takes in information about employe
 ## Links
 -   Github Repository:
     - https://github.com/brianalegre/10-OOP-Homework
+-   Sample HTML (Not Deployed):
+    - https://github.com/brianalegre/10-OOP-Homework/blob/main/dist/index.html
 -   Video Demo (Youtube):
     - https://youtu.be/1Uyonx65ANI
 -   Video Demo (Github):
