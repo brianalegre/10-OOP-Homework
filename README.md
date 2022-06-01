@@ -6,6 +6,7 @@
 - [Application Preview](#application-preview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Test](#test)
 - [Links](#links)
 - [Criteria](#criteria)
 - [Questions](#questions)
@@ -32,12 +33,15 @@ Build a Node.js command-line application that takes in information about employe
 </p>
 
 ## Installation
-- Copy the repository to your system, 
+- Copy the repository to your system
 - npm install
 - node index.js
 
 ## Usage
 - Quickly and easily create a Team Org Web Page
+
+## Test
+- npm run test
 
 ## Links
 -   Github Repository:
